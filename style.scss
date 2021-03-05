@@ -1,0 +1,203 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: url("https://images.pexels.com/photos/3740469/pexels-photo-3740469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center/cover;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-box {
+  background-color: #f7f7f7;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 60px;
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__social {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .social-text  {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        color: #999999;
+        margin-top: 45px;
+      }
+
+      .social-links {
+        font-size: 20px;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none;
+          margin: 20px 3px;
+          color: white;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          text-align: center;
+          transition: background-color .3s;
+        }
+
+        .facebook {
+          background-color: #3b5998;
+          padding: 10px 14px;
+
+        }
+
+        .facebook:hover, .twitter:hover {
+          background-color: #333333;
+        }
+
+        .twitter {
+          background-color: #1da1f2;
+          padding: 10px;
+        }
+      }
+    }
+
+    &__login-button {
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+      border: 0;
+      background: #6675df;
+      border-radius: 10px;
+      padding: 15px;
+      letter-spacing: 1px;
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-top: 35px;
+      transition: background .5s;
+    }
+
+    &__login-button:hover {
+      background: #333333;
+    }
+
+    .login-box {
+      width: 100%;
+      border-radius: 10px;
+      position: relative;
+      height: 78px;
+      margin: 5px auto;
+    }
+
+    &__input {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: none;
+      border: 0;
+      border: 1px solid #e6e6e6;
+      font-family: 'Poppins', sans-serif;
+      color: #555;
+      font-size: 20px;
+      font-weight: 200;
+      padding-left: 25px;
+      transition: all .3s ease;
+    }
+
+    &__label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      padding-left: 25px;
+      pointer-events: none;
+
+      .content-name {
+        font-weight: 200;
+        font-size: 20px;
+        position: absolute;
+        bottom: 25px;
+        color: #555;
+        left: 0;
+        padding-left: 25px;
+        transition: all .3s ease;
+      }
+    }
+
+    &__additional-form {
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      a {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        color: #555;
+        font-size: 13px;
+        transition: color .3s;
+      }
+
+      a:hover {
+        color: #6675df;
+      }
+
+      label {
+        font-size: 13px;
+        color: #999999;
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.form__input:focus+.form__label .content-name,
+.form__input:valid+.form__label .content-name {
+  transform: translateY(-20px);
+  font-size: 15px;
+}
+
+.form__input:focus,
+.form__input:valid {
+  padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .form-box {
+    flex-basis: 100%;
+    padding: 10px 30px;
+  }
+}
